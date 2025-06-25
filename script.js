@@ -6,6 +6,10 @@ const list = document.getElementById('task-list');
 
 addBtn.addEventListener('click', () => {
   const text = input.value;
+  if (!text) {
+    alert('Cannot add an empty task');
+    return;
+  }
   const li = document.createElement('li');
   li.textContent = text;
   list.appendChild(li);
